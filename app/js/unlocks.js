@@ -6,7 +6,7 @@ import { TROPHY } from './trophies.js';
 
 export const CATS = [
   { key: 'bg', name: '背景' },
-  { key: 'mark', name: '答對的 標記' },
+  { key: 'mark', name: '答對標記' },
   { key: 'particle', name: '紙吹雪' },
   { key: 'music', name: '音樂' },
   { key: 'costume', name: '換裝' },
