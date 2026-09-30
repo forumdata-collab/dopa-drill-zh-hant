@@ -23,7 +23,7 @@ const lcm = (a, b) => (a / gcd(a, b)) * b;
 // Multiples of d up to the first one above n (hint for "how many d in n").
 const table = (d, n) => { const out = []; for (let k = 1; k <= 9; k++) { out.push(d * k); if (d * k > n) break; } return `${d} 的乘法表：${out.join(' ')}`; };
 // Decimal string for an integer scaled by 10^p (1234, 2 -> "12.34").
-const decStr = (n, p) => { if (!p) return String(n); const s = String(n).padStart(p + 1, '0'); return `${s.slice(0, -p)}.${s.slice(-p)}`; };
+const decStr = (n, p) => { if (!Number.isFinite(n)) return '?'; /* 防禦：負數/NaN 不應出現，出現時也不污染版面（正常路徑永不觸發） */ if (n < 0) return '-' + decStr(-n, p); if (!p) return String(n); const s = String(n).padStart(p + 1, '0'); return `${s.slice(0, -p)}.${s.slice(-p)}`; };
 
 function carries(a, b) {
   let c = 0; let n = 0;
@@ -364,7 +364,7 @@ const GEN = {
       const o1 = rng() < 0.6 ? '＋' : '−'; const o2 = rng() < 0.6 ? '＋' : '−';
       const s1 = o1 === '＋' ? a + b : a - b; if (s1 < 0) continue;
       const s2 = o2 === '＋' ? s1 + c : s1 - c; if (s2 < 0 || s2 > 20) continue;
-      return buildH([{ n: a }, { op: o1 }, { n: b }, { op: o2 }, { n: c }, { op: '＝' }, { ans: s2 }], { title: '3三個數', text: `${a}${o1}${b}${o2}${c}`, answer: String(s2), help: `先 ${a} ${o1} ${b} ＝ ${s1}` });
+      return buildH([{ n: a }, { op: o1 }, { n: b }, { op: o2 }, { n: c }, { op: '＝' }, { ans: s2 }], { title: '三個數', text: `${a}${o1}${b}${o2}${c}`, answer: String(s2), help: `先 ${a} ${o1} ${b} ＝ ${s1}` });
     }
     throw new Error('add3');
   },

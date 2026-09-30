@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![語言](https://img.shields.io/badge/語言-繁體中文-3b6bff.svg)](#)
 [![執行環境](https://img.shields.io/badge/執行環境-瀏覽器（零依賴）-ff7ab6.svg)](#)
-[![Tests](https://img.shields.io/badge/tests-58%20passing-3fdcb0.svg)](#測試)
+[![Tests](https://img.shields.io/badge/tests-89%20passing-3fdcb0.svg)](#測試)
 [![Upstream](https://img.shields.io/badge/上游-grmchn%2Fdopa--drill-1b1d4d.svg)](https://github.com/grmchn/dopa-drill)
 
 > 每解一題數學，畫面和音樂就越來越誇張的計算練習簿。純瀏覽器執行，沒有後端、沒有追蹤、不用安裝。
@@ -38,7 +38,7 @@
 | 字型 | 新增 **jf open 粉圓**（OFL 1.1）子集 `app/fonts/jf-openhuninn.woff2`；中文字一律由中文字型呈現，Dela Gothic One 與 Zen Maru Gothic 只用於數字與英數，避免日文字形混進中文 |
 | 語言標記 | `<html lang="ja">` → `<html lang="zh-Hant">`；數字與日期格式 `ja-JP` → `zh-Hant-TW` |
 | 名稱 | 遊戲名 `ドパドリル` → **多巴練習簿**、吉祥物 `ドパキチ` → **多巴基**（只改顯示文字；技能 ID、產生器名稱、CSS class 等識別碼一律不動） |
-| 測試 | 對應中文輸出的斷言已更新，`node --test` 58 項全部通過 |
+| 測試 | 對應中文輸出的斷言已更新；另加入 31 項稽核強化測試（邊界矩陣、故障注入、狀態機單調性），`node --test` 89 項全部通過 |
 | 工具 | `tools/build_fonts.sh` 增加中文字型子集流程（同時產生日文數字／英數子集） |
 | 未改動 | 遊戲規則、題目產生器、計分、儲存格式、演出與音樂邏輯 |
 

@@ -31,12 +31,14 @@ export const DOPA_MAX_L = 9.08;
 // change the score; it only makes dopa grow faster: the multiplier rises
 // evenly from x1.0 and tops out at x2.0 at 20 combo.
 export const COMBO_DOPA = { max: 2, full: 20 };
-export const comboMult = (combo) => 1 + (COMBO_DOPA.max - 1) * Math.min(1, Math.max(0, combo) / COMBO_DOPA.full);
+export const comboMult = (combo) => { const c = Number.isFinite(combo) ? Math.max(0, combo) : 0; return 1 + (COMBO_DOPA.max - 1) * Math.min(1, c / COMBO_DOPA.full); };
 export const comboMaxed = (combo) => combo >= COMBO_DOPA.full;
 
 // Add one answer cell's worth of dopa. `base` is the no-combo step (log10).
 export function addDopa(L, base, combo) {
-  return Math.min(DOPA_MAX_L, L + Math.max(0.003, base) * comboMult(combo));
+  // 防禦：base 為 NaN/Inf 時退到最低增量，避免多巴值被永久污染成 NaN。
+  const b = Number.isFinite(base) ? Math.max(0.003, base) : 0.003;
+  return Math.min(DOPA_MAX_L, L + b * comboMult(combo));
 }
 
 // Time allowed to enter the next answer cell before the combo breaks

@@ -3,6 +3,10 @@
 
 const KEY = 'dopa-drill:v1';
 const VERSION = 1;
+// 記錄 ID：同一毫秒內連續新增也不可碰撞（否則 updateRecord 會改錯條）。
+const newId = () => (globalThis.crypto && crypto.randomUUID)
+  ? crypto.randomUUID()
+  : `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 10)}${Math.random().toString(36).slice(2, 10)}`;
 
 export function defaultState() {
   return {
@@ -61,7 +65,7 @@ export const dayKey = (d = new Date()) => `${d.getFullYear()}-${String(d.getMont
 // rec: { mode, score, ok, ng, timeMs, dopaL, ... }; returns the stored entry.
 export function addRecord(rec, at = new Date()) {
   const st = load();
-  const entry = { id: `${at.getTime().toString(36)}${Math.floor(Math.random() * 1e4).toString(36)}`, day: dayKey(at), at: at.getTime(), ...rec };
+  const entry = { id: newId(), day: dayKey(at), at: at.getTime(), ...rec };
   st.history.push(entry);
   if (st.history.length > MAX_HISTORY) st.history.splice(0, st.history.length - MAX_HISTORY);
   save();

@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Language](https://img.shields.io/badge/language-Traditional%20Chinese%20(zh--Hant)-3b6bff.svg)](#)
 [![Runtime](https://img.shields.io/badge/runtime-browser%2C%20zero%20dependencies-ff7ab6.svg)](#)
-[![Tests](https://img.shields.io/badge/tests-58%20passing-3fdcb0.svg)](#tests)
+[![Tests](https://img.shields.io/badge/tests-89%20passing-3fdcb0.svg)](#tests)
 [![Upstream](https://img.shields.io/badge/upstream-grmchn%2Fdopa--drill-1b1d4d.svg)](https://github.com/grmchn/dopa-drill)
 
 > A browser-only arithmetic drill where every solved problem escalates the visuals and the music. No backend, no tracking, nothing to install.
@@ -38,7 +38,7 @@ Arithmetic practice is usually boring. Here every problem becomes a performance:
 | Fonts | Added a subset of **jf open 粉圓** (OFL 1.1) as `app/fonts/jf-openhuninn.woff2`. Chinese glyphs always come from the Chinese face; Dela Gothic One and Zen Maru Gothic are restricted to digits and Latin so Japanese glyph shapes never mix into Chinese text |
 | Language tags | `<html lang="ja">` → `<html lang="zh-Hant">`; number/date formatting `ja-JP` → `zh-Hant-TW` |
 | Names | ドパドリル → **多巴練習簿**, ドパキチ → **多巴基** (display strings only; skill IDs, generator names and CSS classes are untouched) |
-| Tests | Assertions updated for the Chinese output; all 58 tests pass with `node --test` |
+| Tests | Assertions updated for the Chinese output, plus 31 audit-hardening tests (boundary matrices, fault injection, state-machine monotonicity); all 89 pass with `node --test` |
 | Tooling | `tools/build_fonts.sh` now also builds the Chinese subset alongside the Japanese digit/Latin subsets |
 | Unchanged | Game rules, problem generators, scoring, storage format, animations and music |
 

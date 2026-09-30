@@ -324,7 +324,7 @@ function startGame(kind = 'level', arg) {
   audio.unlock();
   S.run += 1;
   if (S.bonusOpen) { $('#bonus').hidden = true; S.bonusOpen = false; }
-  S.N = Number($('.pick [aria-checked="true"]').dataset.count);
+  S.N = Number($('.pick [aria-checked="true"]').dataset.count) || 10; // 防禦：找不到選中項時退回 10 題
   S.rng = makeRng(Number(params.get('seed') || Math.floor(Math.random() * 1e9)));
   S.sessionSigs = new Set();
   S.kind = kind; S.kindArg = arg;
@@ -1580,6 +1580,8 @@ function setVolume(v, { persist = true } = {}) {
   if (persist) store.updateSettings({ volume: v });
 }
 function setCount(n, { persist = true } = {}) {
+  // 防禦：URL ?count=12 這類非法值會令「選中按鈕」消失，S.N 由 aria-checked 讀回時變成 NaN。
+  n = [6, 10, 14].includes(n) ? n : 10;
   $$('.pick button').forEach((x) => x.setAttribute('aria-checked', String(Number(x.dataset.count) === n)));
   if (persist) store.updateSettings({ count: n });
 }
