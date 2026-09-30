@@ -10,7 +10,7 @@ export const CATS = [
   { key: 'particle', name: '紙吹雪' },
   { key: 'music', name: '音樂' },
   { key: 'costume', name: '換裝' },
-  { key: 'color', name: '多巴基的 顏色' },
+  { key: 'color', name: '多巴基的顏色' },
   { key: 'crowd', name: '觀眾' },
   { key: 'finale', name: '壓軸' },
 ];
