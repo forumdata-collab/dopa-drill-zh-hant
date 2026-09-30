@@ -48,10 +48,24 @@ Exceptions to the MIT License
    platforms where the creator receives advertising or tipping revenue.
 
    When a fan work or fork is published, please make clear that it is
-   unofficial. A Japanese summary of these terms is in README.md; if the two
-   differ, this English text prevails.
+   unofficial. A Traditional Chinese summary of these terms is in README.md
+   (the original Japanese summary is kept in docs/README.upstream.ja.md); if
+   they differ, this English text prevails.
 
 2. Fonts
 
-   The fonts in app/fonts/ (Dela Gothic One, Zen Maru Gothic) are licensed under
-   the SIL Open Font License 1.1. See the OFL-*.txt files in that directory.
+   The fonts in app/fonts/ (Dela Gothic One, Zen Maru Gothic, jf open 粉圓) are
+   licensed under the SIL Open Font License 1.1. See the OFL-*.txt files in that
+   directory.
+
+--------------------------------------------------------------------------------
+
+Notes for this edition (Traditional Chinese translation)
+
+This repository is a modified copy of grmchn/dopa-drill. The MIT copyright
+notice above is unchanged. Modifications made by this edition are limited to
+translation and to the assets needed for it: user-facing strings, documentation,
+the <html lang> value, number/date locale formatting, test assertions that check
+translated output, and the addition of the jf open 粉圓 font subset (app/fonts/
+jf-openhuninn.woff2). Game rules, problem generators, scoring, storage format and
+the animation/audio code are unmodified. Every change is listed in README.md.

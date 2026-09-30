@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="1024" height="1024" viewBox="267 306 1300 1300" role="img" aria-labelledby="title desc">
-  <title id="title">ドパキチ — 左右対称・正面目</title>
-  <desc id="desc">左右対称のベクタードロー版。正面を向くピンクの目と下がった丸い手。頭と胴の高さ約1.6:1、幅約2:1、胴とおなかの最大幅約1.618:1。均一な細い輪郭線、正方形、透過背景、部位別レイヤー。 眉は水平の短い楕円。</desc>
+  <title id="title">多巴基 — 左右對稱、正面視角</title>
+  <desc id="desc">左右對稱的向量繪製版本。正視的粉紅眼睛與下垂的圓手。頭與身體高度約 1.6:1、寬度約 2:1，身體與肚子的最大寬度約 1.618:1。輪廓線均勻細長、正方形畫布、透明背景、依部位分層。眉毛是水平的短橢圓。</desc>
   <metadata>Palette: pink #FF97BF; cream #FFF3E4; pale pink #FFE6F0; blue #2F79F7; outline #000000. Every visible stroke is 4.5 viewBox units (3.545 pixels at the nominal 1024-pixel size). No embedded bitmap, filters, or animation. Nested SVG groups use stable IDs. data-pivot stores animation origin in viewBox coordinates. Head and body meet without a drawn neck seam; their fills overlap. Major poses may need adjustment of the joining contours.</metadata>
   <defs>
     <style>.line{stroke:#000;stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round}</style>
